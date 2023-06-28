@@ -1,0 +1,62 @@
+/* ROBOT.GIF from Giphy - https://giphy.com/gifs/robot-cinema-4d-eyedesyn-3o7abtn7DuREEpsyWY */
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #45badd;
+}
+
+.container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: url('./robot.gif');
+  background-size: contain;   /* Image will be fully visible on screen */
+  background-position: left center;    /* left is horizontal part of property, center is vertical part of property */
+  background-repeat: no-repeat;
+}
+
+button {
+  cursor: pointer;
+  outline: none;
+  width: 200px;
+  height: 50px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 20px;
+  color: white;
+  background: #ff3482;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 2px 2px 20px 10px rgba(0, 0, 0, 0.2);  /* 2px to the right for horizontal offset, 2px down for vertical offset, the blur (how far out blur of shadow goes, and the spread (10px for how far out whole shadow spreads from element. Then rgba to change opacity of shadow with alpha value */
+}
+
+button:hover {
+  filter: brightness(95%);     /* Make button darker */
+}
+
+button:active {
+  transform: scale(0.98);    /* Button appears to be clicked */
+}
+
+button:disabled {
+  cursor: default;
+  filter: brightness(30%);
+} 
+
+/* Media Query: Tablet or Smaller */
+@media screen and (max-width: 1000px) {
+  .container {
+    background-position: center center;
+    background-size: cover;
+  }
+
+  button {
+    box-shadow: 5px 5px 30px 20px rgba(0, 0, 0, 0.5);
+  }
+} 
